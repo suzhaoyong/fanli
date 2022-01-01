@@ -37,17 +37,17 @@ change()
     if [[ "$os" == "debian"  &&  "$cpu" == "amd64" ]];then
         apt-get install wget git tar -y
         url=https://dl.golang.com.cn/dl/go/go1.17.5.linux-amd64.tar.gz
-        wget $url
+        wget $url --no-check-certificate
         tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
     elif [[ "$os" == "centos"  &&  "$cpu" == "amd64"  ]];then
         yum install wget git openssl openssl-devel gcc make perl tar -y
         url=https://dl.golang.com.cn/dl/go/go1.17.5.linux-amd64.tar.gz
-        wget $url
+        wget $url --no-check-certificate
         tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
     elif [[ $cpu == "arm64" ]];then
         apt-get install wget git tar -y
         url=https://dl.golang.com.cn/dl/go/go1.17.5.linux-arm64.tar.gz
-        wget $url
+        wget $url --no-check-certificate
         tar -C /usr/local -xzf go1.17.5.linux-arm64.tar.gz
     else
         exit 1
@@ -123,7 +123,7 @@ sillyGirl()
     fi
     #获取dev.go文件
     echo "下载dev.go文件"
-    wget https://ghproxy.com/https://raw.githubusercontent.com/hdbjlizhe/oneKeyForSillGirl/main/dev.go
+    wget https://ghproxy.com/https://raw.githubusercontent.com/hdbjlizhe/oneKeyForSillGirl/main/dev.go --no-check-certificate
     #进入develop文件夹
     if [[ $? == 0 ]]; then
         sleep 3s
@@ -149,7 +149,7 @@ sillyGirl()
     #fi
     cd ..;
     sleep 3s
-    wget https://ghproxy.com/https://github.com/hdbjlizhe/fanli/releases/download/main/sillyGirl_amd64.tar.gz
+    wget https://ghproxy.com/https://github.com/hdbjlizhe/fanli/releases/download/main/sillyGirl_amd64.tar.gz --no-check-certificate
     tar -zxvf sillyGirl_amd64.tar.gz
     #将备份的文件拷进sillyGirl文件夹
     sleep 3s
