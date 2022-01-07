@@ -127,7 +127,7 @@ sillyGirl()
     #获取dev.go文件
     echo "下载dev.go文件"
     #wget https://ghproxy.com/https://raw.githubusercontent.com/hdbjlizhe/oneKeyForSillGirl/main/dev.go --no-check-certificate
-    cp /root/dev.go .
+    cp /root/backup/dev.go .
     #进入develop文件夹
     if [[ $? == 0 ]]; then
         sleep 3s
